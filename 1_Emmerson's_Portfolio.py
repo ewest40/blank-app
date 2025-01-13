@@ -5,7 +5,7 @@ import pandas as pd
 # About Me
 def about_me_section():
     st.header("About Me")
-    st.image(einfo.profile_picture, width=200)  
+    st.image(einfo.profile_picture, width=200) 
     st.write(einfo.about_me)  
     st.write("---")
 
@@ -16,15 +16,15 @@ def links_section():
     st.sidebar.header("Links")
     st.sidebar.text("Connect with me on LinkedIn")
     linkedin_link = f'<a href="{einfo.my_linkedin_url}"><img src="{einfo.linkedin_image_url}" alt="LinkedIn" width = "75" height = "75"></a>'
-    st.sidebar.markdown(linkedin_link, unsafe_allow_html=True)  # Updated
+    st.sidebar.markdown(linkedin_link, unsafe_allow_html=True) 
     
     st.sidebar.text("Check out my work")
     github_link = f'<a href="{einfo.my_github_url}"><img src="{einfo.github_image_url}" alt="GitHub" width = "65" height = "65"></a>'
-    st.sidebar.markdown(github_link, unsafe_allow_html=True)  # Updated
+    st.sidebar.markdown(github_link, unsafe_allow_html=True)  
     
     st.sidebar.text("Or email me!")
     email_html = f'<a href="mailto:{einfo.my_email_address}"><img src="{einfo.email_image_url}" alt="Email" width = "75" height = "75"></a>'
-    st.sidebar.markdown(email_html, unsafe_allow_html=True)  # Updated
+    st.sidebar.markdown(email_html, unsafe_allow_html=True) 
 
 links_section()
 
@@ -50,7 +50,7 @@ def education_section(education_data, course_data):
     )
     st.write("---")
 
-education_section(einfo.education_data, einfo.course_data)  # Updated
+education_section(einfo.education_data, einfo.course_data)  
 
 # Professional Experience
 def experience_section(experience_data):
@@ -62,31 +62,31 @@ def experience_section(experience_data):
             expander.write(bullet)
     st.write("---")
 
-experience_section(einfo.experience_data)  
+experience_section(einfo.experience_data) 
 
 # Projects
 def project_section(projects_data):
     st.header("Projects")
-    for project_name, project_description in projects_data.items():
+    for project_name,(project_description,image) in projects_data.items():
         expander = st.expander(f"{project_name}")
+        expander.image(image, width = 250)
         expander.write(project_description)
     st.write("---")
-
-project_section(einfo.projects_data)  
+project_section(einfo.projects_data) 
 
 # Skills
 def skills_section(programming_data, spoken_data):
     st.header("Skills")
     st.subheader("Programming Languages")
     for skill, percentage in programming_data.items():
-        st.write(f"{skill} {einfo.programming_icons.get(skill, '')}")  # Updated
+        st.write(f"{skill} {einfo.programming_icons.get(skill, '')}")  
         st.progress(percentage)
     
     st.subheader("Spoken Languages")
     for spoken, proficiency in spoken_data.items():
-        st.write(f"{spoken} {einfo.spoken_icons.get(spoken, '')}: {proficiency}")  # Updated
+        st.write(f"{spoken} {einfo.spoken_icons.get(spoken, '')}: {proficiency}")  
 
-skills_section(einfo.programming_data, einfo.spoken_data)  # Updated
+skills_section(einfo.programming_data, einfo.spoken_data)  
 
 # Activities
 def activities_section(leadership_data, activity_data):
