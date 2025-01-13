@@ -10,7 +10,7 @@ github_image_url = "https://cdn-icons-png.flaticon.com/256/25/25231.png"
 email_image_url = "https://logowik.com/content/uploads/images/513_email.jpg"
 
 # CHANGE BELOW
-my_linkedin_url = "www.linkedin.com/in/emmerson-west-a15182329"
+my_linkedin_url = "https://www.linkedin.com/in/emmerson-west-a15182329"
 my_github_url = "https://github.com/ewest40"
 my_email_address = "ewest40@gatech.edu"
 
@@ -50,7 +50,8 @@ experience_data = {
 
 
 projects_data = {
-    "Analysis of Polymorphic Microsatellite DNA to Determine Extra-Pair Paternity in Eastern Bluebirds": "Synthesized Eastern Bluebird DNA to determine breeding motives",
+    "Analysis of Polymorphic Microsatellite DNA to Determine Extra-Pair Paternity in Eastern Bluebirds": ("Synthesized Eastern Bluebird DNA to determine breeding motives","Images/gel.jpg"),
+    "Random Character Generator": ("Built an API query to generate random characters with traits for a murder mystery game","Images/randomgen.png")
 }
 
 programming_data = {
